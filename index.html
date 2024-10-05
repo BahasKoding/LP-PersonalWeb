@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BahasKoding - Personal Portfolio</title>
+    <link rel="stylesheet" href="src/final.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="src/script.js"></script>
+    <style>
+        @keyframes shaky {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(3px, 3px) rotate(2deg); }
+            50% { transform: translate(0, 0) rotate(0eg); }
+            75% { transform: translate(-3px, 3px) rotate(-2deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .animate-shaky {
+            transition: all 0.3s ease;
+        }
+        .animate-shaky.shaking {
+            animation: shaky 0.5s ease-in-out;
+        }
+        .grayscale {
+            filter: grayscale(100%);
+        }
+        .grayscale:hover {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body class="bg-background dark:bg-dark-background text-text dark:text-dark-text font-sans">
+    <!-- Header Section -->
+    <header class="fixed w-full z-50 transition-all duration-300 bg-gradient-to-r from-primary to-secondary dark:from-gray-800 dark:to-gray-900" id="navbar">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <div class="text-xl sm:text-2xl font-bold text-white dark:text-gray-200 transition-colors duration-300" id="navbar-brand">
+                <a href="#beranda">BahasKoding</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#beranda" class="text-white dark:text-gray-200 hover:text-tertiary dark:hover:text-gray-400 transition-colors duration-300 font-semibold text-sm sm:text-base">Beranda</a>
+                <a href="#tentang-saya" class="text-white dark:text-gray-200 hover:text-tertiary dark:hover:text-gray-400 transition-colors duration-300 font-semibold text-sm sm:text-base">Tentang Saya</a>
+                <a href="#portfolio" class="text-white dark:text-gray-200 hover:text-tertiary dark:hover:text-gray-400 transition-colors duration-300 font-semibold text-sm sm:text-base">Portfolio</a>
+                <a href="#clients" class="text-white dark:text-gray-200 hover:text-tertiary dark:hover:text-gray-400 transition-colors duration-300 font-semibold text-sm sm:text-base">Clients</a>
+                <a href="#blog" class="text-white dark:text-gray-200 hover:text-tertiary dark:hover:text-gray-400 transition-colors duration-300 font-semibold text-sm sm:text-base">Blog</a>
+                <a href="#contact" class="text-white dark:text-gray-200 hover:text-tertiary dark:hover:text-gray-400 transition-colors duration-300 font-semibold text-sm sm:text-base">Contact</a>
+                <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300">
+                    <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+            <button class="md:hidden text-white dark:text-gray-200 transition-colors duration-300" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden bg-white/70 dark:bg-gray-800/70 backdrop-filter backdrop-blur-lg fixed w-full z-40 shadow-md transition-all duration-300" id="mobile-menu">
+        <a href="#beranda" class="block py-2 px-4 text-sm text-primary dark:text-gray-200 hover:bg-tertiary/20 dark:hover:bg-gray-700 font-semibold">Beranda</a>
+        <a href="#tentang-saya" class="block py-2 px-4 text-sm text-primary dark:text-gray-200 hover:bg-tertiary/20 dark:hover:bg-gray-700 font-semibold">Tentang Saya</a>
+        <a href="#portfolio" class="block py-2 px-4 text-sm text-primary dark:text-gray-200 hover:bg-tertiary/20 dark:hover:bg-gray-700 font-semibold">Portfolio</a>
+        <a href="#clients" class="block py-2 px-4 text-sm text-primary dark:text-gray-200 hover:bg-tertiary/20 dark:hover:bg-gray-700 font-semibold">Clients</a>
+        <a href="#blog" class="block py-2 px-4 text-sm text-primary dark:text-gray-200 hover:bg-tertiary/20 dark:hover:bg-gray-700 font-semibold">Blog</a>
+        <a href="#contact" class="block py-2 px-4 text-sm text-primary dark:text-gray-200 hover:bg-tertiary/20 dark:hover:bg-gray-700 font-semibold">Contact</a>
+        <div class="py-2 px-4">
+            <button id="mobile-dark-mode-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300">
+                <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main >
+        <!-- Beranda Section -->
+        <section id="beranda" class="relative bg-gradient-to-br from-primary to-secondary dark:from-gray-800 dark:to-gray-900 text-white dark:text-gray-200 py-24 lg:py-40 overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-10 dark:opacity-5"></div>
+            <div class="container mx-auto px-4 sm:px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-down">
+                        Menghidupkan Ide Anda,<br class="hidden sm:block"> <span class="text-tertiary dark:text-secondary">Menciptakan Masa Depan</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl mb-10 animate-fade-in-up max-w-3xl mx-auto">
+                        Saya adalah <span class="font-semibold text-tertiary dark:text-secondary">John Doe</span>, seorang <span class="font-semibold text-tertiary dark:text-secondary">Web Developer</span> yang berfokus pada solusi inovatif dan hasil yang luar biasa. Dengan pengalaman <span class="font-semibold text-tertiary dark:text-secondary">10+ tahun</span> dan rekam jejak sukses, saya siap membantu Anda mewujudkan visi besar Anda.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in">
+                        <a href="#portfolio" class="bg-white dark:bg-gray-800 text-primary dark:text-white py-3 px-6 rounded-full hover:bg-tertiary dark:hover:bg-gray-700 hover:text-white transition duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Lihat Portfolio Saya
+                        </a>
+                        <a href="#contact" class="bg-transparent border-2 border-white text-white py-3 px-6 rounded-full hover:bg-white dark:hover:bg-gray-700 hover:text-primary dark:hover:text-white transition duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Hubungi Saya
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+        </section>
+
+        <!-- Tentang Saya Section -->
+        <section id="tentang-saya" class="relative py-20 bg-gradient-to-b from-white to-tertiary/10 dark:from-gray-900 dark:to-gray-800/10 overflow-hidden">
+            <div class="absolute inset-0 bg-pattern opacity-10 dark:opacity-5"></div>
+                <div class="container mx-auto px-4 sm:px-6">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-primary dark:text-white">
+                        Tentang Saya
+                    </h2>
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2 mb-8 lg:mb-0">
+                            <div class="relative">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Professional Portrait" class="rounded-lg w-full max-w-md mx-auto object-cover shadow-2xl dark:shadow-gray-700" style="height: 400px;">
+                                <div class="absolute -bottom-6 -right-6 bg-secondary dark:bg-gray-700 text-white py-2 px-4 rounded-lg shadow-lg">
+                                    <span class="font-semibold">10+ Tahun Pengalaman</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <p class="text-lg sm:text-xl mb-6 text-text dark:text-gray-300 leading-relaxed">
+                                Halo, saya <span class="font-semibold text-primary dark:text-secondary">John Doe</span>, seorang profesional berpengalaman di bidang <span class="font-semibold text-primary dark:text-secondary">pengembangan web</span>. Dengan latar belakang pendidikan di <span class="font-semibold text-secondary dark:text-primary">Ilmu Komputer</span> dan keahlian di <span class="font-semibold text-secondary dark:text-primary">front-end dan back-end development</span>, saya telah membantu klien dari berbagai industri mencapai tujuan mereka melalui kreativitas, inovasi, dan solusi strategis.
+                            </p>
+                            <p class="text-lg sm:text-xl mb-8 text-text dark:text-gray-300 leading-relaxed">
+                                Fokus saya adalah memberikan hasil terbaik yang tidak hanya memenuhi ekspektasi tetapi juga <span class="text-primary dark:text-secondary font-semibold">melampauinya</span>. Saya percaya bahwa setiap proyek adalah kesempatan untuk menciptakan sesuatu yang <span class="text-primary dark:text-secondary font-semibold">luar biasa</span>.
+                            </p>
+                            <div class="flex flex-wrap gap-4 mb-8">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md dark:shadow-gray-700 flex items-center">
+                                    <svg class="w-6 h-6 text-primary dark:text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span class="font-semibold text-secondary dark:text-primary">Kreatif</span>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md dark:shadow-gray-700 flex items-center">
+                                    <svg class="w-6 h-6 text-primary dark:text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    <span class="font-semibold text-secondary dark:text-primary">Inovatif</span>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md dark:shadow-gray-700 flex items-center">
+                                    <svg class="w-6 h-6 text-primary dark:text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                    <span class="font-semibold text-secondary dark:text-primary">Strategis</span>
+                                </div>
+                            </div>
+                            <a href="#contact" class="inline-block bg-primary dark:bg-secondary text-white py-3 px-6 rounded-full hover:bg-secondary dark:hover:bg-primary transition duration-300 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                Hubungi Saya
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-tertiary dark:from-gray-800 to-transparent"></div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="relative bg-tertiary dark:bg-gray-800 py-16 sm:py-20 overflow-hidden">
+
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary dark:text-white">Karya Terbaik Saya</h2>
+                <p class="text-center mb-12 text-text dark:text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">Jelajahi beberapa <span class="font-semibold text-primary dark:text-secondary">proyek unggulan</span> yang telah saya kerjakan untuk klien dari berbagai industri.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Portfolio Item 1 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <img src="https://source.unsplash.com/random/800x600?website" alt="E-commerce Website" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">E-commerce Website</h3>
+                            <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Platform belanja online responsif dengan fitur pembayaran terintegrasi.</p>
+                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-shaky">
+                        <img src="https://source.unsplash.com/random/800x600?mobile-app" alt="Mobile App" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">Aplikasi Mobile Fitness</h3>
+                            <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Aplikasi pelacak kebugaran dengan antarmuka yang intuitif dan personalisasi AI.</p>
+                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg">Lihat Detail</a>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md">
+                        <img src="https://source.unsplash.com/random/800x600?dashboard" alt="Dashboard" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">Dashboard Analytics</h3>
+                            <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Dashboard data interaktif untuk visualisasi dan analisis bisnis real-time.</p>
+                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="bg-primary dark:bg-gray-700 text-white py-3 px-8 rounded-full hover:bg-secondary dark:hover:bg-gray-600 transition duration-300 text-lg sm:text-xl font-semibold inline-block shadow-md hover:shadow-lg transform hover:-translate-y-1">Lihat Semua Proyek</a>
+
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+            
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="relative py-24 sm:py-32 bg-white dark:bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary dark:text-white">Klien yang Percaya</h2>
+                <p class="text-center mb-12 text-text dark:text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">Saya bangga telah bekerja sama dengan <span class="font-semibold text-primary dark:text-secondary">perusahaan-perusahaan terkemuka</span> dalam menghadirkan solusi digital yang inovatif.</p>
+                <!-- Client logos -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mb-12">
+                    <div class="flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/08/Indomie-Logo.png" alt="Indomie" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://seeklogo.com/images/W/wardah-logo-F20988478A-seeklogo.com.png" alt="Wardah" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/2560px-BNI_logo.svg.png" alt="BNI" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Logo_Universitas_Brawijaya.svg/1200px-Logo_Universitas_Brawijaya.svg.png" alt="Universitas Brawijaya" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#contact" class="bg-primary dark:bg-gray-700 text-white py-3 px-8 rounded-full hover:bg-secondary dark:hover:bg-gray-600 transition duration-300 text-lg sm:text-xl font-semibold inline-block shadow-md hover:shadow-lg transform hover:-translate-y-1">Mulai Kolaborasi</a>
+                </div>
+            </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-tertiary dark:from-gray-800 to-transparent"></div>
+
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="relative bg-tertiary dark:bg-gray-800 py-20 sm:py-24 overflow-hidden">
+
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary dark:text-white">Inspirasi & Wawasan</h2>
+                <p class="text-center mb-12 text-text dark:text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">Jelajahi <span class="font-semibold text-primary dark:text-secondary">ide-ide segar</span> dan <span class="font-semibold text-primary dark:text-secondary">tren terkini</span> dalam dunia digital melalui postingan Instagram saya.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Instagram post 1 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <img src="https://source.unsplash.com/random/800x600?tech" alt="Tech Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-3 text-primary dark:text-white">Inovasi Teknologi</h3>
+                            <p class="text-text dark:text-gray-300 mb-4">Menjelajahi perkembangan terbaru dalam dunia tech...</p>
+                            <a href="https://www.instagram.com/p/C_XkSHJSfB3/" target="_blank" rel="noopener noreferrer" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg inline-flex items-center">
+                                Lihat Post
+                                <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Instagram post 2 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <img src="https://source.unsplash.com/random/800x600?design" alt="Design Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-3 text-primary dark:text-white">Desain Kreatif</h3>
+                            <p class="text-text dark:text-gray-300 mb-4">Inspirasi desain untuk proyek digital Anda...</p>
+                            <a href="https://www.instagram.com/p/C8dSWaFyTgQ/" target="_blank" rel="noopener noreferrer" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg inline-flex items-center">
+                                Lihat Post
+                                <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Instagram post 3 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md">
+                        <img src="https://source.unsplash.com/random/800x600?code" alt="Coding Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-3 text-primary dark:text-white">Tips Coding</h3>
+                            <p class="text-text dark:text-gray-300 mb-4">Trik dan teknik untuk meningkatkan skill coding Anda...</p>
+                            <a href="https://www.instagram.com/p/CwNAct2MCRX/" target="_blank" rel="noopener noreferrer" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg inline-flex items-center">
+                                Lihat Post
+                                <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="https://www.instagram.com/your_instagram_handle/" target="_blank" rel="noopener noreferrer" class="bg-primary dark:bg-gray-700 text-white py-3 px-8 rounded-full hover:bg-secondary dark:hover:bg-gray-600 transition duration-300 text-lg sm:text-xl font-semibold inline-block shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        Ikuti Saya di Instagram
+                    </a>
+                </div>
+            </div>
+             <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="relative py-20 sm:py-24 bg-white dark:bg-gray-900 overflow-hidden">
+
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary dark:text-white">Mari Berkolaborasi</h2>
+                <p class="text-center mb-12 text-text dark:text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">Punya <span class="font-semibold text-primary dark:text-secondary">ide brilian</span>? Ayo wujudkan bersama! Hubungi saya dan kita mulai menciptakan sesuatu yang <span class="font-semibold text-primary dark:text-secondary">luar biasa</span>.</p>
+                <div class="max-w-4xl mx-auto bg-tertiary dark:bg-gray-800 p-8 rounded-xl shadow-lg dark:shadow-gray-700">
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-text dark:text-gray-300 font-semibold mb-2">Nama</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-secondary dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition duration-300 bg-white dark:bg-gray-700 text-text dark:text-gray-300" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-text dark:text-gray-300 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-secondary dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition duration-300 bg-white dark:bg-gray-700 text-text dark:text-gray-300" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="subject" class="block text-text dark:text-gray-300 font-semibold mb-2">Subjek</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-secondary dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition duration-300 bg-white dark:bg-gray-700 text-text dark:text-gray-300" required>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="message" class="block text-text dark:text-gray-300 font-semibold mb-2">Pesan</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-secondary dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition duration-300 bg-white dark:bg-gray-700 text-text dark:text-gray-300" required></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="w-full bg-primary dark:bg-gray-700 text-white py-3 px-6 rounded-lg hover:bg-secondary dark:hover:bg-gray-600 transition duration-300 text-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                                Kirim Pesan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-violet-900 dark:bg-slate-400 text-white dark:text-gray-800 py-12">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-tertiary dark:text-primary">BahasKoding</h3>
+                    <p class="mb-2">Hubungi Saya</p>
+                    <p class="mb-2 text-tertiary dark:text-primary">your.email@example.com</p>
+                    <p class="mb-2">Jl. Contoh No. 123</p>
+                    <p class="mb-4">Kota Anda</p>
+                    <div class="w-full h-48 rounded-lg overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7985117561385!2d107.57332531477293!3d-6.914740595003615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e71cb76767dd%3A0x889596c42c3a71!2sJl.%20Dr.%20Setiabudi%20No.193%2C%20Gegerkalong%2C%20Kec.%20Sukasari%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040153!5e0!3m2!1sen!2sid!4v1620815158582!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-tertiary dark:text-primary">Layanan</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Web Development</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Mobile App Development</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">UI/UX Design</a></li>
+                        <li><a href="#" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-tertiary dark:text-primary">Tautan</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#beranda" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Beranda</a></li>
+                        <li class="mb-2"><a href="#tentang-saya" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Tentang Saya</a></li>
+                        <li class="mb-2"><a href="#portfolio" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Portfolio</a></li>
+                        <li class="mb-2"><a href="#clients" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Clients</a></li>
+                        <li class="mb-2"><a href="#blog" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-tertiary dark:hover:text-secondary transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-tertiary dark:text-primary">Ikuti Saya</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-white/20 dark:bg-gray-600 dark:hover:bg-gray-500 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:text-tertiary dark:group-hover:text-secondary group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-white/20 dark:bg-gray-600 dark:hover:bg-gray-500 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:text-tertiary dark:group-hover:text-secondary group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-white/20 dark:bg-gray-600 dark:hover:bg-gray-500 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:text-tertiary dark:group-hover:text-secondary group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-white/20 dark:bg-gray-600 dark:hover:bg-gray-500 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-white group-hover:text-tertiary dark:group-hover:text-secondary group-hover:scale-110 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 dark:border-gray-600 text-center">
+                <p>© 2023 <span class="text-tertiary dark:text-primary">BahasKoding</span>. All rights reserved. <br>
+                    Dibuat dengan ❤️ oleh <span class="text-tertiary dark:text-primary">Rai</span> menggunakan <span class="text-tertiary dark:text-primary">Tailwind CSS</span>.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
