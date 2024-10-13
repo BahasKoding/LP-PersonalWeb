@@ -6,7 +6,6 @@
     <title>BahasKoding - Personal Portfolio</title>
     <link rel="stylesheet" href="src/final.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="src/script.js"></script>
     <style>
         @keyframes shaky {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -149,47 +148,61 @@
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="relative bg-tertiary dark:bg-gray-800 py-16 sm:py-20 overflow-hidden">
-
             <div class="container mx-auto px-4 sm:px-6">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-primary dark:text-white">Karya Terbaik Saya</h2>
                 <p class="text-center mb-12 text-text dark:text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">Jelajahi beberapa <span class="font-semibold text-primary dark:text-secondary">proyek unggulan</span> yang telah saya kerjakan untuk klien dari berbagai industri.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Portfolio Item 1 -->
-                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                        <img src="https://source.unsplash.com/random/800x600?website" alt="E-commerce Website" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">E-commerce Website</h3>
-                            <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Platform belanja online responsif dengan fitur pembayaran terintegrasi.</p>
-                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg">Lihat Detail</a>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 flex flex-col">
+                        <img src="src/img/E-Commerce.jpg" alt="E-commerce Website" class="w-full h-48 object-cover">
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">E-commerce Website</h3>
+                                <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Platform belanja online responsif dengan fitur pembayaran terintegrasi.</p>
+                            </div>
+                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg inline-flex items-center group">
+                                Lihat Detail
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            </a>
                         </div>
                     </div>
+
                     <!-- Portfolio Item 2 -->
-                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-shaky">
-                        <img src="https://source.unsplash.com/random/800x600?mobile-app" alt="Mobile App" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">Aplikasi Mobile Fitness</h3>
-                            <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Aplikasi pelacak kebugaran dengan antarmuka yang intuitif dan personalisasi AI.</p>
-                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg">Lihat Detail</a>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-shaky flex flex-col">
+                        <img src="src/img/Mobile-Fitness.jpg" alt="Mobile App" class="w-full h-48 object-cover">
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">Aplikasi Mobile Fitness</h3>
+                                <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Aplikasi pelacak kebugaran dengan antarmuka yang intuitif dan personalisasi AI.</p>
+                            </div>
+                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg inline-flex items-center group">
+                                Lihat Detail
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            </a>
                         </div>
                     </div>
+
                     <!-- Portfolio Item 3 -->
-                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md">
-                        <img src="https://source.unsplash.com/random/800x600?dashboard" alt="Dashboard" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">Dashboard Analytics</h3>
-                            <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Dashboard data interaktif untuk visualisasi dan analisis bisnis real-time.</p>
-                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg">Lihat Detail</a>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md flex flex-col">
+                        <img src="src/img/Dashboard.jpg" alt="Dashboard" class="w-full h-48 object-cover">
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-xl sm:text-2xl mb-3 text-primary dark:text-white">Dashboard Analytics</h3>
+                                <p class="text-text dark:text-gray-300 text-base sm:text-lg mb-4">Dashboard data interaktif untuk visualisasi dan analisis bisnis real-time.</p>
+                            </div>
+                            <a href="#" class="text-secondary dark:text-tertiary hover:text-primary dark:hover:text-white transition duration-300 font-semibold text-lg inline-flex items-center group">
+                                Lihat Detail
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="text-center mt-12">
                     <a href="#" class="bg-primary dark:bg-gray-700 text-white py-3 px-8 rounded-full hover:bg-secondary dark:hover:bg-gray-600 transition duration-300 text-lg sm:text-xl font-semibold inline-block shadow-md hover:shadow-lg transform hover:-translate-y-1">Lihat Semua Proyek</a>
-
                 </div>
             </div>
             <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
-            
         </section>
 
         <!-- Clients Section -->
@@ -212,16 +225,16 @@
                         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="https://1000logos.net/wp-content/uploads/2020/08/Indomie-Logo.png" alt="Indomie" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                        <img src="src/img/indomie.png" alt="Indomie" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="https://seeklogo.com/images/W/wardah-logo-F20988478A-seeklogo.com.png" alt="Wardah" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                        <img src="src/img/wardah.png" alt="Wardah" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
                     </div>
                     <div class="flex items-center justify-center">
                         <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/2560px-BNI_logo.svg.png" alt="BNI" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Logo_Universitas_Brawijaya.svg/1200px-Logo_Universitas_Brawijaya.svg.png" alt="Universitas Brawijaya" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
+                        <img src="src/img/tokopaedi.jpg" alt="Toko paedi" class="h-12 w-auto grayscale dark:grayscale-0 transition-all duration-300 hover:grayscale-0 hover:scale-110">
                     </div>
                 </div>
                 <div class="text-center">
@@ -241,7 +254,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Instagram post 1 -->
                     <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                        <img src="https://source.unsplash.com/random/800x600?tech" alt="Tech Post" class="w-full h-48 object-cover">
+                        <img src="src/img/coding.jpg" alt="Tech Post" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-3 text-primary dark:text-white">Inovasi Teknologi</h3>
                             <p class="text-text dark:text-gray-300 mb-4">Menjelajahi perkembangan terbaru dalam dunia tech...</p>
@@ -253,7 +266,7 @@
                     </div>
                     <!-- Instagram post 2 -->
                     <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                        <img src="https://source.unsplash.com/random/800x600?design" alt="Design Post" class="w-full h-48 object-cover">
+                        <img src="src/img/cs.jpg" alt="Design Post" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-3 text-primary dark:text-white">Desain Kreatif</h3>
                             <p class="text-text dark:text-gray-300 mb-4">Inspirasi desain untuk proyek digital Anda...</p>
@@ -265,7 +278,7 @@
                     </div>
                     <!-- Instagram post 3 -->
                     <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 md:col-span-2 lg:col-span-1 md:mx-auto md:max-w-md">
-                        <img src="https://source.unsplash.com/random/800x600?code" alt="Coding Post" class="w-full h-48 object-cover">
+                        <img src="src/img/laptop.jpg" alt="Coding Post" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="font-bold text-xl mb-3 text-primary dark:text-white">Tips Coding</h3>
                             <p class="text-text dark:text-gray-300 mb-4">Trik dan teknik untuk meningkatkan skill coding Anda...</p>
@@ -394,5 +407,134 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        const navbarBrand = document.getElementById('navbar-brand');
+        const navLinks = navbar.querySelectorAll('a');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const mobileDarkModeToggle = document.getElementById('mobile-dark-mode-toggle');
+
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+
+        // Initialize dark mode based on user preference or previous setting
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // Event listeners for dark mode toggles
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        mobileDarkModeToggle.addEventListener('click', toggleDarkMode);
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.style.top = navbar.offsetHeight + 'px';
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navbar.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Prevent clicks inside mobile menu from closing it
+        mobileMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Handle scroll events
+        function handleScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/70', 'dark:bg-gray-800/70', 'backdrop-filter', 'backdrop-blur-lg', 'shadow-md');
+                navbar.classList.remove('bg-gradient-to-r', 'from-primary', 'to-secondary', 'dark:from-gray-800', 'dark:to-gray-900');
+                navbarBrand.classList.remove('text-white', 'dark:text-gray-200');
+                navbarBrand.classList.add('text-primary', 'dark:text-white');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'dark:text-gray-200', 'hover:text-tertiary', 'dark:hover:text-gray-400');
+                    link.classList.add('text-primary', 'dark:text-white', 'hover:text-secondary', 'dark:hover:text-gray-300');
+                });
+                mobileMenuButton.classList.remove('text-white', 'dark:text-gray-200');
+                mobileMenuButton.classList.add('text-primary', 'dark:text-white');
+            } else {
+                navbar.classList.remove('bg-white/70', 'dark:bg-gray-800/70', 'backdrop-filter', 'backdrop-blur-lg', 'shadow-md');
+                navbar.classList.add('bg-gradient-to-r', 'from-primary', 'to-secondary', 'dark:from-gray-800', 'dark:to-gray-900');
+                navbarBrand.classList.add('text-white', 'dark:text-gray-200');
+                navbarBrand.classList.remove('text-primary', 'dark:text-white');
+                navLinks.forEach(link => {
+                    link.classList.add('text-white', 'dark:text-gray-200', 'hover:text-tertiary', 'dark:hover:text-gray-400');
+                    link.classList.remove('text-primary', 'dark:text-white', 'hover:text-secondary', 'dark:hover:text-gray-300');
+                });
+                mobileMenuButton.classList.add('text-white', 'dark:text-gray-200');
+                mobileMenuButton.classList.remove('text-primary', 'dark:text-white');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Portfolio item shake animation
+        function shakePortfolioItems() {
+            const portfolioItems = document.querySelectorAll('.animate-shaky');
+            portfolioItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('shaking');
+                    setTimeout(() => {
+                        item.classList.remove('shaking');
+                    }, 1000); // Duration of shake animation
+                }, index * 300); // Delay between shaking items
+            });
+        }
+
+        // Run shake animation every 8 seconds
+        setInterval(shakePortfolioItems, 8000);
+
+        // Run initial shake animation after 2 seconds
+        setTimeout(shakePortfolioItems, 2000);
+
+        // Initial run of shake animation
+        shakePortfolioItems();
+
+        // Trigger the scroll event on page load
+        window.dispatchEvent(new Event('scroll'));
+    });
+    </script>
 </body>
 </html>
